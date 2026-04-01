@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>BMI Calculator</h1>
+      <p class="subtitle">Calculate your Body Mass Index</p>
+
+      <div class="unit-toggle">
+        <button class="unit-btn active" data-unit="metric">Metric</button>
+        <button class="unit-btn" data-unit="imperial">Imperial</button>
+      </div>
+
+      <form id="bmi-form" novalidate>
+        <div class="input-group" id="weight-group">
+          <label for="weight">Weight <span class="unit-label" id="weight-unit">(kg)</span></label>
+          <input type="number" id="weight" placeholder="e.g. 70" min="0.1" step="any" required>
+          <span class="error-msg" id="weight-error"></span>
+        </div>
+
+        <div class="input-group" id="height-group">
+          <label for="height">Height <span class="unit-label" id="height-unit">(cm)</span></label>
+          <input type="number" id="height" placeholder="e.g. 175" min="0.1" step="any" required>
+          <span class="error-msg" id="height-error"></span>
+        </div>
+
+        <div class="buttons">
+          <button type="submit" class="btn btn-primary">Calculate BMI</button>
+          <button type="button" class="btn btn-secondary" id="reset-btn">Reset</button>
+        </div>
+      </form>
+
+      <div class="result-panel hidden" id="result-panel">
+        <div class="bmi-value" id="bmi-value"></div>
+        <div class="bmi-category" id="bmi-category"></div>
+        <div class="bmi-bar">
+          <div class="bmi-bar-track">
+            <div class="bmi-bar-marker" id="bmi-marker"></div>
+          </div>
+          <div class="bmi-bar-labels">
+            <span>Underweight</span>
+            <span>Normal</span>
+            <span>Overweight</span>
+            <span>Obese</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="disclaimer">This calculator provides a general indication only. BMI does not account for muscle mass, bone density, or body composition. Consult a healthcare professional for personalized advice.</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
